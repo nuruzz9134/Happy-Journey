@@ -95,7 +95,11 @@
     border: solid 1px black;
     width: 400px;
     border-radius:10px ;
+<<<<<<< HEAD
     /* margin-left: 36%; */
+=======
+    margin-left: 36%;
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
     margin-top: 160px;
     flex-direction: column;
 
@@ -127,6 +131,7 @@
     margin-bottom: 7px;
 
   }
+<<<<<<< HEAD
 
   /* ------thankyou page---- */
   .thankyouPage{
@@ -143,3 +148,5 @@
     justify-content: center;
     padding-top: 100px;
   }
+=======
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4

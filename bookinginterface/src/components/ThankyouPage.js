@@ -41,9 +41,14 @@ const ThankyouPage = () => {
 
 
   return (
+<<<<<<< HEAD
     <div className='thankyouPage'>
     <div><h4>You Have Booked Successfully</h4></div>
     <div>...Now Go To Tickets Page And Check Your Tickets...</div>
+=======
+    <>
+    <div> You Have Booked Successfully....Now Go To Ticket Page And Check Your Tickets...Thank You. </div>
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
     <div>
       {
         notification && (
@@ -51,7 +56,11 @@ const ThankyouPage = () => {
         )
       }
     </div>
+<<<<<<< HEAD
     </div>
+=======
+    </>
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
     
     
   )

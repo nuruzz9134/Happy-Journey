@@ -1,7 +1,10 @@
 
 from pathlib import Path
 from datetime import timedelta
+<<<<<<< HEAD
 import os
+=======
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 import pytz
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -12,7 +15,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = os.environ.get("SECRET_KEY")
+=======
+SECRET_KEY = securitykey
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -76,6 +83,7 @@ ASGI_APPLICATION = 'busbookingApp.asgi.application'
 
 AUTH_USER_MODEL = 'registration.User'
 
+<<<<<<< HEAD
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -84,6 +92,9 @@ DATABASES = {
         'PASSWORD':''
     }
 } 
+=======
+
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
@@ -142,7 +153,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 SIMPLE_JWT = {
+<<<<<<< HEAD
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=150),
+=======
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'AUTH_HEADER_TYPES': ('Bearer',),
     'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
@@ -164,8 +179,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT =  587
+<<<<<<< HEAD
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+=======
+EMAIL_HOST_USER = '' # use your email
+EMAIL_HOST_PASSWORD = '' 
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 
 
 CHANNEL_LAYERS = {

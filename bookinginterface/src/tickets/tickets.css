@@ -29,6 +29,7 @@
 .ticket_delete{
     margin: 8px;
     margin-left: 150px;
+<<<<<<< HEAD
 }
 .ticket_delete button{
     font-size: 15px;
@@ -36,4 +37,6 @@
 .ticket_delete button:hover{
     background-color: rgb(255, 0, 0);
    
+=======
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 }

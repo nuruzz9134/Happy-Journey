@@ -2,11 +2,17 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+<<<<<<< HEAD
 from dotenv import load_dotenv
 
 
 def main():
     load_dotenv()
+=======
+
+
+def main():
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'busbookingApp.settings')
     try:

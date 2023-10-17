@@ -24,6 +24,12 @@ const AllBusCard = ({bus}) => {
             <div><b>available seats</b> <span> : </span>{bus.seats}</div>
             <div><b>ticket price</b><span> : </span>{bus.travel_fee}</div>
         </div>
+<<<<<<< HEAD
+=======
+        <div className='right-container'>
+     
+        </div>
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
     </div>
     </div>
   )

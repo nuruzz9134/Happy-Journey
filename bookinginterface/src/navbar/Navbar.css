@@ -11,6 +11,7 @@ background-color: rgb(122, 122, 165);
 }
 
 .nav-search button{
+<<<<<<< HEAD
     font-size: 20px;
     border-radius: 30px;
 }
@@ -21,6 +22,12 @@ background-color: rgb(122, 122, 165);
 .nav-profile button:hover{
     background-color: darkblue;
 }
+=======
+    font-size: 16px;
+    border-radius: 30px;
+}
+
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 .profile-logo{
     width: 30px;
     height: 30px;

@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import {FaUserCircle} from 'react-icons/fa';
 import { useState } from 'react';
+<<<<<<< HEAD
+=======
+import { SidebarList } from './SidebarList';
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 import bus_logo from '../images/th.jpeg';
 import { useSelector } from 'react-redux';
 import { GetToken } from '../auth/LocalStore_Token'
@@ -36,7 +40,10 @@ const Navbar = () => {
     <div className={sidebar ? 'Sidebar active' : 'Sidebar'}>
             <ul className="Sidebarlist">
                 <li className='row' onClick={()=>{navigate("/login")}} >Login</li>
+<<<<<<< HEAD
                 <li className='row' onClick={()=>{navigate("/")}} >Home</li>
+=======
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
                 <li className='row' onClick={access_token ? ()=>{navigate("/allnotifications")} : ()=>{navigate("/login")}}>
                     Notifications</li>
                 <li className='row' onClick={access_token ? ()=>{navigate("/tickets")} : ()=>{navigate("/login")}}>

@@ -12,7 +12,11 @@ class superuserSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(style={'input_type' : 'password'},write_only=True)
     class Meta:
         model= User
+<<<<<<< HEAD
         fields = ['email','password','password2']
+=======
+        fields = ['email','name','password','password2']
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
         extra_kwargs = {'password' : {'write_only':True}    }
 
 
@@ -33,7 +37,11 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(style={'input_type' : 'password'},write_only=True)
     class Meta:
         model= User
+<<<<<<< HEAD
         fields = ['email','password','password2']
+=======
+        fields = ['email','name','password','password2']
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
         extra_kwargs = {'password' : {'write_only':True}    }
 
 

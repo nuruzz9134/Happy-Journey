@@ -29,6 +29,14 @@ class BusModel(models.Model):
     time = models.TimeField(blank=True,null=True)
     seats = models.PositiveIntegerField(blank=True,null=True)
     travel_fee = models.PositiveIntegerField(blank=True,null=True)
+<<<<<<< HEAD
+=======
+    photo1 = models.ImageField(upload_to='busImages',blank=True,null=True)
+    photo2 = models.ImageField(upload_to='busImages',blank=True,null=True)
+    photo3 = models.ImageField(upload_to='busImages',blank=True,null=True)
+    photo4 = models.ImageField(upload_to='busImages',blank=True,null=True)
+    photo5 = models.ImageField(upload_to='busImages',blank=True,null=True)
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 
     def __str__(self):
         return str(self.id)
@@ -63,10 +71,14 @@ class BusBookingModel(models.Model):
 
 
 class BookedBusSeatsModel(models.Model):
+<<<<<<< HEAD
     bus = models.ForeignKey(BusBookingModel,
                             related_name='bookedbusseats',
                             on_delete=models.CASCADE,
                             blank=True,null=True)
+=======
+    bus = models.ForeignKey(BusBookingModel,related_name='bookedbusseats', on_delete=models.CASCADE,blank=True,null=True)
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
     seats = models.CharField(max_length=250,blank=True,null=True)
     available_seats = models.IntegerField(blank=True,null=True)
     date = models.DateField(blank=True,null=True)
@@ -94,6 +106,7 @@ class UserNotifications(models.Model):
 def notification_handeler(sender,instance,created,**kwargs):
     if created:
         schedule,created= CrontabSchedule.objects.get_or_create(
+<<<<<<< HEAD
             # hour = instance.sent_time.hour,
             # minute = instance.sent_time.minute,
             # day_of_month = instance.sent_time.day,
@@ -107,6 +120,21 @@ def notification_handeler(sender,instance,created,**kwargs):
             month_of_year='10'
 
             )
+=======
+            hour = instance.sent_time.hour,
+            minute = instance.sent_time.minute,
+            day_of_month = instance.sent_time.day,
+            month_of_year = instance.sent_time.month
+            
+            )
+
+            # minute='9',
+            # hour='0',
+            # day_of_month='2',
+            # month_of_year='8'
+
+            # )
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
         
         task = PeriodicTask.objects.create(
             crontab = schedule,

@@ -4,7 +4,10 @@ from rest_framework.response import Response
 from django.contrib.auth import authenticate
 from rest_framework.permissions import IsAuthenticated
 from django.conf import settings
+<<<<<<< HEAD
 import random
+=======
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
 import datetime
 import time
@@ -17,6 +20,21 @@ from .models import User
 
 
 
+<<<<<<< HEAD
+=======
+class CreateBusData(APIView):
+    def post(self,request):
+        try:
+            serializer = BusModelSerializer(data = request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response({"msz": "Bus Created successfully."}, status=HTTP_201_CREATED)
+            else:
+                return Response(repr(serializer.errors), status=HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response({"msz": str(e)}, status=HTTP_400_BAD_REQUEST)
+        
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 
 
 class AllBusDatas(APIView):
@@ -41,7 +59,11 @@ class SearchedBuses(APIView):
             data = BusModel.objects.filter(
                 Q(Q(route__icontains=query))
                 )
+<<<<<<< HEAD
            
+=======
+            
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
             days=[]
             for i in data:
                 spliting = i.day.split(',')
@@ -69,7 +91,11 @@ class SearchedBuses(APIView):
                         "travel_fee":i.travel_fee
                         }
                     obj.update({'date':searched_date})
+<<<<<<< HEAD
                     buses.append(obj)
+=======
+                buses.append(obj)
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
             return Response({"msz":buses}, status=HTTP_201_CREATED)
         except Exception as e:
             return Response({"msz": str(e)}, status=HTTP_400_BAD_REQUEST)
@@ -86,7 +112,13 @@ class ConfirmSeatsBooking(APIView):
             date = request.data['date']
             userid = request.user.id
 
+<<<<<<< HEAD
             userbookingid = str(random.randint(10000000 , 99999999))
+=======
+            x = str(userid) + str(transportbusid)
+            y = x.replace('-','A')
+            userbookingid = y.replace(':','A')
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 
             bookingDate = datetime.datetime.strptime(date,"%Y-%m-%d")
             currDateString = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -146,6 +178,12 @@ class ConfirmSeatsBooking(APIView):
                                 if existedPassenger.exists():
                                     passangerseats = existedPassenger.first().seat
                                     newpassangerseats = passangerseats + seats
+<<<<<<< HEAD
+=======
+                                    # BusBookingModel.objects.update(
+                                    # seat = newpassangerseats
+                                    # )
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
                                     existedPassenger.update(seat = newpassangerseats)
 
 
@@ -160,7 +198,16 @@ class ConfirmSeatsBooking(APIView):
                                     )
                         
                                 bustransportdayid = BusBookingModel.objects.filter(BusTransportDayId = transportbusid, date=date).first().id
+<<<<<<< HEAD
                          
+=======
+                                # BookedBusSeatsModel.objects.update(
+                                # bus_id= bustransportid,
+                                # seats = newbookedSeats,
+                                # available_seats = availableSeats,
+                                # date = date
+                                #     )
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
                                 BookedBusSeatsModel.objects.filter(bus_id = bustransportdayid,date=date).update(
                                     available_seats = availableSeats,
                                     seats= newbookedSeats)
@@ -218,6 +265,21 @@ class BookedBusSeats(APIView):
             return Response({str(e)}, status=HTTP_400_BAD_REQUEST)
         
 
+<<<<<<< HEAD
+=======
+        
+# class UserBookingHistory(APIView):
+#     def get(self,request):
+#         try:
+#             userid = request.user.id
+#             data = BusBookingModel.objects.filter(passenger = userid)
+#             serializer = BookingModelSerializer(data,many=True)
+#             print(">>>>>",serializer.data)
+#             return Response ({'msg': serializer.data}, status=HTTP_201_CREATED)
+#         except Exception as e :
+#             return Response({str(e)}, status=HTTP_400_BAD_REQUEST)
+        
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 
 class ManageTickets(APIView):
     
@@ -309,10 +371,14 @@ class ManageTickets(APIView):
                             newSeats = newSeats + i + ' '
                     booked_bus.update(seat = newSeats) 
 
+<<<<<<< HEAD
                     bookedBus = BookedBusSeatsModel.objects.filter(
                         bus_id = booked_busid,
                         date=date
                         ).first()
+=======
+                    bookedBus = BookedBusSeatsModel.objects.filter(bus_id = booked_busid,date=date).first()
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
                     seats = bookedBus.seats
                     availavleSeats = bookedBus.available_seats
                     seats_arr = seats.split(' ')
@@ -331,6 +397,7 @@ class ManageTickets(APIView):
 
                     avbl_seats = availavleSeats + len(seatNumber)
 
+<<<<<<< HEAD
                     BookedBusSeatsModel.objects.filter(
                         bus_id = booked_busid,
                         date=date).update(
@@ -345,6 +412,13 @@ class ManageTickets(APIView):
                         BookedBusSeatsModel.objects.get(
                             bus_id = booked_busid,
                             date=date).delete()
+=======
+                    BookedBusSeatsModel.objects.filter(bus_id = booked_busid,date=date).update(seats = updateSeats, available_seats= avbl_seats)
+
+                    u = BookedBusSeatsModel.objects.get(bus_id = booked_busid,date=date).seats
+                    if u == '':
+                        BookedBusSeatsModel.objects.get(bus_id = booked_busid,date=date).delete()
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
                         BusBookingModel.objects.get(
                                             passenger_id = userid,
                                             bus_id = pk,

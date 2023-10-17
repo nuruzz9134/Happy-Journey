@@ -37,7 +37,11 @@ const RegistrationForm = ()=>{
 		SetenteredPassword('')
 		SetenteredConfirmPassword('')
 
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 		const res = await registerUser(Data)
 
 		if (res.error){
@@ -45,8 +49,12 @@ const RegistrationForm = ()=>{
 			setServer_error(res.error.data)
 		}
 		if (res.data){
+<<<<<<< HEAD
 			// navigate('/login',{state : res.data})
 			navigate('/login',{state : res.data})
+=======
+			navigate('/verifyOTP',{state : res.data})
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 		}
     }
 

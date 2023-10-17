@@ -33,7 +33,10 @@
 .notification_delete button{
     padding: 8px;
     margin: 13px;
+<<<<<<< HEAD
 }
 .notification_delete button:hover{
     background-color: red;
+=======
+>>>>>>> 6e77fe80d5e4e6de116c3b49e9266fea373e1ce4
 }
